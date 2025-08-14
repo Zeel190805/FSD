@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="poll-container">
+        <h2>Vote For your favorite programming language?</h2>
+        <div class="poll-options">
+            <button onclick="vote('JavaScript')">JavaScript</button>
+            <button onclick="vote('Python')">Python</button>
+            <button onclick="vote('Java')">Java</button>
+            <button onclick="vote('C++')">C++</button>
+        </div>
+        <div class="results">
+            <h3>Results:</h3>
+            <div class="result-row">
+                <span class="result-label">JavaScript</span>
+                <div class="result-bar-container">
+                    <div class="result-bar" id="js-bar"></div>
+                </div>
+                <span class="result-percentage" id="js-percent">0%</span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">Python</span>
+                <div class="result-bar-container">
+                    <div class="result-bar" id="py-bar"></div>
+                </div>
+                <span class="result-percentage" id="py-percent">0%</span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">Java</span>
+                <div class="result-bar-container">
+                    <div class="result-bar" id="java-bar"></div>
+                </div>
+                <span class="result-percentage" id="java-percent">0%</span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">C++</span>
+                <div class="result-bar-container">
+                    <div class="result-bar" id="cpp-bar"></div>
+                </div>
+                <span class="result-percentage" id="cpp-percent">0%</span>
+            </div>
+        </div>
+        <button class="reset-btn" onclick="resetVotes()">Reset</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

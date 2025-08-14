@@ -1,0 +1,31 @@
+.center-container {
+    display: flex;
+    flex-direction: column; /* or 'row' if you want them side by side */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* full viewport height */
+    font-family: serif;
+    font-size:xx-large;
+  }
+
+  button {
+    padding: 10px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin: 8px 0;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px) scale(1.03);
+  }
+  
+  button:active {
+    background-color: #003d80;
+    transform: scale(0.98);
+  }
