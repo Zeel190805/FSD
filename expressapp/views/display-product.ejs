@@ -1,0 +1,23 @@
+<h1>All Products</h1>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Actions</th>
+  </tr>
+  <% products.forEach(function(product) { %>
+    <tr>
+      <td><%= product.pname %></td>
+      <td><%= product.pprice %></td>
+      <td><%= product.pdetail %></td>
+      <td>
+        <a href="/edit-product/<%= product._id %>">Edit</a> |
+        <form action="/delete-product/<%= product._id %>" method="POST" style="display:inline;">
+          <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+        </form>
+      </td>
+    </tr>
+  <% }) %>
+</table>
+<a href="/add-product">Add New Product</a>
