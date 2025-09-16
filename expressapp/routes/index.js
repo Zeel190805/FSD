@@ -97,4 +97,44 @@ router.post('/edit-product-process', function(req, res, next) {
     });
 });
 
+
+router.get('/file-upload', function(req,res,next) {
+  res.render('fileupload-form')
+});
+
+router.post('/file-upload', function(req,res,next) {
+  console.log(req.files.file123)
+  
+  var myfile = req.files.file123
+  myfile.mv("public/uploads/"+myfile.name , function(err){
+    res.send("file uploaded")
+  });
+})
+
+
+router.get('/login' ,function(req,res,next){
+  res.render('login',{title: 'Express'})
+})
+
+router.post('/login',function(req,res,next){
+  var a = req.body.txt1;
+  req.session.uname = a
+  res.redirect('/dashboard')
+})
+
+router.get('/dashboard' , function(req,res,next){
+  if(req.session.uname) {
+    var a = req.session.uname
+    res.render('dashboard',{mya:a})
+  } else {
+    res.redirect('/login')
+  }
+})
+
+router.get('/logout' , function(req,res,next){
+  req.session.destroy(function(){
+    res.redirect('/login')
+  })
+})
+
 module.exports = router;
